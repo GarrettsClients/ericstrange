@@ -1,0 +1,30 @@
+.links-section {
+  width: 100%;
+  background: linear-gradient(to bottom, #2C3E50, #1A252F);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.links-section h2 {
+  font-size: 2.5rem;
+  color: #ff9800;
+  margin-bottom: 3rem;
+}
+
+.links-carousel {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  gap: 2rem;
+  padding: 0 1rem;
+  scroll-snap-type: x mandatory;
+  
+  /* Hide scrollbar */
+  scrollbar-width: none; /* Firefox */
+}
+
+.links-carousel::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}

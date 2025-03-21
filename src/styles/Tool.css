@@ -1,0 +1,31 @@
+.tool-item {
+    min-width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #34495E;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, background 0.3s;
+  }
+  
+  .tool-item:hover {
+    transform: scale(1.1);
+    background: #1A252F;
+  }
+  
+  .tool-icon {
+    font-size: 3rem;
+    color: #ff9800;
+    margin-bottom: 10px;
+  }
+  
+  .tool-item p {
+    font-size: 1.2rem;
+    color: white;
+  }
+  

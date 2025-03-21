@@ -1,0 +1,106 @@
+/* About Section */
+.about-section {
+  background-color: #2C3E50; /* Dark, corporate background */
+  color: #FFFFFF;
+  padding: 5rem 0; /* Add more vertical padding */
+  width: 100vw;
+  min-height: 100vh; /* Ensure the section takes up full viewport height */
+  display: flex; /* Flexbox for centering */
+  align-items: center; /* Vertical centering */
+  justify-content: center; /* Horizontal centering */
+  text-align: center;
+}
+
+/* About Content */
+.about-content {
+  display: flex; /* Use flexbox for alignment */
+  gap: 2rem;
+  max-width: 1000px; /* Shrink max width for better spacing */
+  margin: 0 auto;
+  padding: 0 2rem; /* Add padding to prevent tight edges */
+  align-items: stretch; /* Match text and image height */
+  flex-wrap: wrap; /* Wrap content on smaller screens */
+}
+
+/* About Text */
+.about-text {
+  flex: 1; /* Allow equal space for text */
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #FFFFFF;
+  text-align: left; /* Left-align for readability */
+  padding: 1rem 1.5rem; /* Condensed internal spacing for a professional look */
+  border-left: 4px solid #ff9800; /* Accent border */
+  background: rgba(255, 255, 255, 0.05); /* Subtle background contrast */
+  border-radius: 5px;
+}
+
+.about-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #ff9800; /* Highlighted color for title */
+}
+
+/* About Image */
+.about-image {
+  flex: 1; /* Allow equal space for image */
+  max-width: 350px; /* Shrink max width for better spacing */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Crop if necessary to fill the container */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a soft shadow */
+}
+
+/* About Icons Container */
+.about-icons {
+  display: flex; /* Align icons in a row */
+  justify-content: space-evenly; /* Distribute icons evenly */
+  align-items: center; /* Center-align icons and text */
+  margin-top: 2rem;
+  gap: 2rem; /* Add space between items */
+}
+
+/* Individual Icon Item */
+.icon-item {
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack icon and text vertically */
+  align-items: center; /* Center-align text and icons */
+  text-align: center;
+  gap: 0.5rem; /* Space between the icon and the text */
+}
+
+.icon {
+  font-size: 2rem; /* Icon size */
+  color: #ff9800; /* Orange color for consistency */
+}
+
+.icon-item span {
+  font-size: 1rem; /* Adjust text size */
+  color: white; /* White text for readability */
+}
+
+/* Portrait Orientation */
+@media (orientation: portrait) {
+  .about-content {
+    flex-direction: column; /* Stack text and image vertically */
+    align-items: center; /* Center-align in portrait mode */
+    padding: 0 1.5rem; /* Add padding for smaller screens */
+  }
+
+  .about-text {
+    text-align: center; /* Center text in portrait mode */
+    border-left: none; /* Remove accent border in portrait mode */
+    padding: 1rem; /* Adjust padding */
+  }
+
+  .about-image {
+    max-width: 300px; /* Shrink image size for portrait */
+  }
+}
+
+/* Landscape Orientation */
+@media (orientation: landscape) {
+  .about-section {
+    padding: 4rem 0; /* Adjust padding for horizontal layouts */
+  }
+}
