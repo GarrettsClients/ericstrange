@@ -1,6 +1,5 @@
 {
   "name": "ericstrange",
-  "homepage": "https://garrettsclients.github.io/ericstrange/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
