@@ -8,12 +8,12 @@ import './styles/App.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/ericstrange">
       <div className="App">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
         <Footer />
       </div>
