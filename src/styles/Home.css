@@ -16,7 +16,7 @@
 .hero-section h1 {
   font-size: 3rem;
   margin-bottom: 1.5rem;
-  color: #E9C46A; /* Highlighted yellow title */
+  color: #caaf00; /* Highlighted yellow title */
   font-weight: bold;
 }
 
@@ -38,6 +38,6 @@
 }
 
 .dashboard-link:hover {
-  background-color: #E76F51; /* Business red hover */
+  background-color: #b86125; /* Business red hover */
   transform: translateY(-2px); /* Subtle lift effect */
 }

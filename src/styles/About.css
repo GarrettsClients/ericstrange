@@ -30,7 +30,7 @@
   color: #FFFFFF;
   text-align: left; /* Left-align for readability */
   padding: 1rem 1.5rem; /* Condensed internal spacing for a professional look */
-  border-left: 4px solid #ff9800; /* Accent border */
+  border-left: 4px solid #b86125; /* Accent border */
   background: rgba(255, 255, 255, 0.05); /* Subtle background contrast */
   border-radius: 5px;
 }
@@ -38,7 +38,7 @@
 .about-title {
   font-size: 2rem;
   margin-bottom: 1.5rem;
-  color: #ff9800; /* Highlighted color for title */
+  color: #b86125; /* Highlighted color for title */
 }
 
 /* About Image */
@@ -71,7 +71,7 @@
 
 .icon {
   font-size: 2rem; /* Icon size */
-  color: #ff9800; /* Orange color for consistency */
+  color: #b86125; /* Orange color for consistency */
 }
 
 .icon-item span {

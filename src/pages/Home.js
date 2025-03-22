@@ -8,8 +8,8 @@ const Home = () => {
       <div className="hero-section">
         <h1>Welcome to Eric Strange' Professional Portfolio</h1>
         <p>
-          I am Eric Strange, a leader, problem solver, and aspiring business professional. My background spans
-          hands-on mechanical work as a go-kart mechanic, leadership roles in Young Life, and the discipline of a varsity athlete.
+          I’m Eric Strange, a dedicated financial professional, bringing experience, integrity, and a passion for helping others succeed.
+          I’m a devoted follower of Jesus, an active ministry partner, and a member of the city council, striving to lead with faith in all I do.
         </p>
         <Link to="/dashboard" className="dashboard-link">Explore My Work</Link>
       </div>

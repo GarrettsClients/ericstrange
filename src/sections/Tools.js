@@ -9,30 +9,44 @@ const fetchStockData = (ticker) => {
   window.open(url, '_blank');
 };
 
+// Function to convert Word to PDF (simplified, opens a free online converter)
+const convertWordToPDF = () => {
+  const fileInput = prompt("Paste a URL to a Word doc or type 'upload' to use a converter:");
+  if (fileInput) {
+    if (fileInput.toLowerCase() === 'upload') {
+      window.open('https://smallpdf.com/word-to-pdf', '_blank'); // Opens a free converter site
+    } else {
+      const pdfUrl = `https://api.convertio.co/convert?url=${encodeURIComponent(fileInput)}`; // Simplified example
+      window.open(pdfUrl, '_blank');
+    }
+  }
+};
+
 // Function to rebalance portfolio with better calculations
 const rebalancePortfolio = () => {
-  const holdingsInput = prompt("Enter holdings as: Stock:Shares (comma-separated)");
-  const targetsInput = prompt("Enter target allocations as: Stock:Percentage (comma-separated)");
+  const holdingsInput = prompt("Enter holdings (e.g., AAPL:50, MSFT:30):");
+  const targetsInput = prompt("Enter targets (e.g., AAPL:60, MSFT:40):");
   
   if (holdingsInput && targetsInput) {
     const holdings = Object.fromEntries(holdingsInput.split(',').map(h => h.split(':').map(v => v.trim())));
     const targets = Object.fromEntries(targetsInput.split(',').map(t => t.split(':').map(v => v.trim())));
     
-    let totalValue = 0;
-    Object.entries(holdings).forEach(([stock, shares]) => {
-      totalValue += parseFloat(shares); // Assume each share is worth $1 for simplicity
-    });
+    let totalShares = 0;
+    Object.values(holdings).forEach(shares => totalShares += parseFloat(shares));
     
-    let result = "Rebalance Instructions:\n";
-    Object.entries(targets).forEach(([stock, percentage]) => {
+    let result = "Rebalance Plan:\n";
+    Object.entries(targets).forEach(([stock, targetPercent]) => {
       if (holdings[stock]) {
-        const targetShares = (parseFloat(percentage) / 100) * totalValue;
-        const difference = targetShares - parseFloat(holdings[stock]);
-        result += `${stock}: ${difference > 0 ? 'Buy' : 'Sell'} ${Math.abs(difference)} shares\n`;
+        const currentShares = parseFloat(holdings[stock]);
+        const targetShares = (parseFloat(targetPercent) / 100) * totalShares;
+        const difference = targetShares - currentShares;
+        result += `${stock}: ${difference > 0 ? 'Buy' : 'Sell'} ${Math.abs(difference.toFixed(2))} shares\n`;
+      } else {
+        result += `${stock}: Buy ${((parseFloat(targetPercent) / 100) * totalShares).toFixed(2)} shares (new position)\n`;
       }
     });
     
-    alert(result);
+    window.alert(result); // Shows the result right away
   }
 };
 
@@ -53,9 +67,7 @@ const tools = [
   {
     title: 'Word to PDF',
     icon: <FaFilePdf />,
-    action: () => {
-      alert("Upload a Word file to convert to PDF. Feature in development!");
-    }
+    action: convertWordToPDF // Updated to open a converter
   },
   {
     title: 'Stock Tracker',
@@ -68,7 +80,7 @@ const tools = [
   {
     title: 'Portfolio Rebalancer',
     icon: <FaBalanceScale />,
-    action: rebalancePortfolio
+    action: rebalancePortfolio // Already set to run on click
   },
   {
     title: 'QR Generator',
@@ -85,9 +97,9 @@ const tools = [
     title: 'Text to Speech',
     icon: <FaVolumeUp />,
     action: () => {
-      const message = prompt("Enter text to speak:");
-      if (message) {
-        const utterance = new SpeechSynthesisUtterance(message);
+      const text = prompt("Enter text to speak:");
+      if (text) {
+        const utterance = new SpeechSynthesisUtterance(text);
         speechSynthesis.speak(utterance);
       }
     }

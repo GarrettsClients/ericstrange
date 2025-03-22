@@ -4,11 +4,12 @@
   color: white;
   padding: 4rem 0;
   text-align: center;
+  overflow: hidden; /* Stops vertical scroll on the section */
 }
 
 .tools-section h2 {
   font-size: 2.5rem;
-  color: #ff9800;
+  color: #b86125;
   margin-bottom: 3rem;
 }
 
@@ -16,15 +17,15 @@
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  overflow-x: auto;
+  overflow-x: auto; /* Allows horizontal scroll */
+  overflow-y: hidden; /* Blocks vertical scroll */
   gap: 2rem;
   padding: 0 1rem;
   scroll-snap-type: x mandatory;
-  
-  /* Hide scrollbar */
-  scrollbar-width: none;
+  height: 200px; /* Fixed height to match tool items */
+  scrollbar-width: none; /* Hides scrollbar in Firefox */
 }
 
 .tools-carousel::-webkit-scrollbar {
-  display: none;
+  display: none; /* Hides scrollbar in Chrome/Safari */
 }
